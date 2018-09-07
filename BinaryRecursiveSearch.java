@@ -1,7 +1,16 @@
 public class BinaryRecursiveSearch implements Practice2Search
 {
-	public int search(int [] arr, int lower, int upper, int target)
+	
+
+	public int search(int [] arr, int target)
 	{
+		return binSearch(arr, target, 0, arr.length);
+	}
+
+
+	public int binSearch(int [] arr, int lower, int upper, int target)
+	{
+
 		if (upper>=lower) 
 	        
 	        { 
@@ -15,12 +24,12 @@ public class BinaryRecursiveSearch implements Practice2Search
 
 	            else if (arr[middle] > target)
 	            {
-	               return search(arr, lower, middle-1, target);
+	               return binSearch(arr, lower, middle-1, target);
 	            } 
 
 	            else 
 	            {
-	                return search(arr, middle+1, upper, target); 
+	                return binSearch(arr, middle+1, upper, target); 
 	            }
 	        } 
 
